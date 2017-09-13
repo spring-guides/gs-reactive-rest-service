@@ -11,50 +11,21 @@ projects: []
 :project_id: draft-gs-template
 
 This guide walks you through the process of creating a "Hello, Spring!" RESTful web
-service with Reactive Spring (new as of version 5) and then consumes that service with a
-WebClient.
+service with Spring WebFlux (new as of version 5) and then consumes that service with a
+WebClient (also new as of version 5).
 
-== Why Reactive?
+NOTE: This guide shows the functional way of using Spring WebFlux. You can also
+http://aLinkToSomething[use annotations with WebFlux].
 
-Spring already has a widely used solution for
-https://spring.io/guides/gs/rest-service/[building a RESTful web service], so why would
-someone want to use this new Reactive way of doing things? For precisely the reason that
-one might turn to a reactive application in the first place: To better manage
-asynchronous processes, especially blocking processes. It's generally bad for an
-application to have to wait for something to happen. Resources (such as threads and
-memory) remain tied up for longer than they should, other processes stack up, and error
-rates rise (other applications may report errors because they can't get access to a
-resource). For all those reasons, reactive applications work better for at least some
-purposes, including for working in the cloud. Consequently, we'll see a lot more reactive
-development, and the Spring team naturally offers a tool to help its users do well when
-writing reactive applications.
+== What You'll Build
 
-For more detail, there's a https://www.youtube.com/watch?v=rdgJ8fOxJhc[video] that
-explains Spring's approach to reactive and its place within Spring going forward.
-
-// TODO Write a piece (not really a guide) about Spring's answer to "Why Reactive?" and
-// link it here.
-
-== Spring's Reactive Stack
-
-What is the reactive stack that supports this guide? Spring WebFlux is the web module for
-Reactive Spring and lives in the new `spring-webflux` module next to the existing (and
-popular!) Spring Web MVC that lives in the `spring-webmvc` module. The two modules share
-many algorithms and mechanisms but cannot actually share any code. This is because
-Reactive Spring runs on a Reactive Streams HTTP adapter layer that’s fully non-blocking
-and reactive all the way down to the HTTP runtime. So while Spring MVC is built for and
-runs on Servlet containers, Spring WebFlux runs also on non-Servlet runtimes, such as on
-Netty and Undertow. This application runs on Netty.
-
-== What you'll build
-
-You’ll build a RESTful web service with Reactive Spring and a WebClient consumer of that
+You’ll build a RESTful web service with Spring Webflux and a WebClient consumer of that
 service. You'll be able to see output in both System.out and at:
 
 [source]
 http://localhost:8080/greeting
 
-== What you'll need
+== What You'll Need
 
 :java_version: 1.8
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/prereq_editor_jdk_buildtools.adoc[]
