@@ -89,7 +89,7 @@ Since we're going to put the result into System.out, a string will do here.
 
 TIP: WebClient can be used to communicate with non-reactive, blocking services, too.
 
-== Make the application executable
+== Make the Application Executable
 
 Although it is possible to package this service as a traditional
 link:/understanding/WAR[WAR] file for deployment to an external application server,
@@ -119,7 +119,7 @@ Once the service has started, you'll see a line that reads:
 That line comes from the reactive content being consumed by the WebClient. Naturally,
 you can find something more interesting to do with your output than put it in System.out.
 
-== Test the application
+== Test the Application
 
 Now that the application is running, you can test it. To start with, you can open a
 browser and go to `http://localhost:8080/hello` and see, "Hello, Spring!" For this guide,
