@@ -29,6 +29,6 @@ public class GreetingRouterTest {
 			.exchange()
 			// and use the dedicated DSL to test assertions against the response
 			.expectStatus().isOk()
-			.expectBody().equals("Hello,Spring!");
+			.expectBody(String.class).isEqualTo("Hello, Spring!");
 	}
 }
