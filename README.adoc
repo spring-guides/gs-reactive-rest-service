@@ -81,7 +81,7 @@ to consume our RESTful service:
 include::complete/src/main/java/hello/GreetingWebClient.java[]
 ----
 
-The WebClient uses reactive features, in the form a Mono to hold the content of the URI
+The WebClient uses reactive features, in the form of a Mono to hold the content of the URI
 we specify and a function (in the `getResult` method) to turn that content into a string.
 If we had different requirements, we might turn it into something other than a string.
 Since we're going to put the result into System.out, a string will do here.
