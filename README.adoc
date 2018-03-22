@@ -22,7 +22,7 @@ You’ll build a RESTful web service with Spring Webflux and a WebClient consume
 service. You'll be able to see output in both System.out and at:
 
 [source]
-http://localhost:8080/greeting
+http://localhost:8080/hello
 
 == What You'll Need
 
