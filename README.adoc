@@ -10,7 +10,7 @@ service with Spring WebFlux (new as of version 5) and then consumes that service
 WebClient (also new as of version 5).
 
 NOTE: This guide shows the functional way of using Spring WebFlux. You can also
-https://aLinkToSomething[use annotations with WebFlux].
+https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-controller[use annotations with WebFlux].
 
 == What You'll Build
 
