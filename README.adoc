@@ -1,5 +1,5 @@
 :spring_boot_version: 2.2.1.RELEASE
-:SpringApplication: http://docs.spring.io/spring-boot/docs/{spring_boot_version}/api/org/springframework/boot/SpringApplication.html
+:SpringApplication: https://docs.spring.io/spring-boot/docs/{spring_boot_version}/api/org/springframework/boot/SpringApplication.html
 :toc:
 :icons: font
 :source-highlighter: prettify
@@ -10,7 +10,7 @@ service with Spring WebFlux (new as of version 5) and then consumes that service
 WebClient (also new as of version 5).
 
 NOTE: This guide shows the functional way of using Spring WebFlux. You can also
-http://aLinkToSomething[use annotations with WebFlux].
+https://aLinkToSomething[use annotations with WebFlux].
 
 == What You'll Build
 
