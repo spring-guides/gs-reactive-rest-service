@@ -1,4 +1,4 @@
-:spring_boot_version: 2.1.3.RELEASE
+:spring_boot_version: 2.2.1.RELEASE
 :SpringApplication: https://docs.spring.io/spring-boot/docs/{spring_boot_version}/api/org/springframework/boot/SpringApplication.html
 :toc:
 :icons: font
@@ -40,7 +40,7 @@ In the Spring Reactive approach, we use a handler to handle the request and crea
 response, as shown in the following example:
 
 `src/main/java/hello/GreetingHandler.java`
-[source,java]
+[source,java,tabsize=2]
 ----
 include::complete/src/main/java/hello/GreetingHandler.java[]
 ----
@@ -56,7 +56,7 @@ In this application, we use a router to handle the only route we expose ("/hello
 shown in the following example:
 
 `src/main/java/hello/GreetingRouter.java`
-[source,java]
+[source,java,tabsize=2]
 ----
 include::complete/src/main/java/hello/GreetingRouter.java[]
 ----
@@ -72,7 +72,7 @@ WebClient class, which is non-blocking. We'll use a WebClient implementation
 to consume our RESTful service:
 
 `src/main/java/hello/GreetingWebClient.java`
-[source,java]
+[source,java,tabsize=2]
 ----
 include::complete/src/main/java/hello/GreetingWebClient.java[]
 ----
@@ -94,7 +94,7 @@ Along the way, you use Reactive Spring's support for embedding the Netty server 
 HTTP runtime, instead of deploying to an external instance.
 
 `src/main/java/hello/Application.java`
-[source,java]
+[source,java,tabsize=2]
 ----
 include::complete/src/main/java/hello/Application.java[]
 ----
@@ -121,7 +121,7 @@ browser and go to `http://localhost:8080/hello` and see, "Hello, Spring!" For th
 we also created a test class to get you started on testing with the WebTestClient class.
 
 `src/test/java/hello/GreetingRouterTest.java`
-[source,java]
+[source,java,tabsize=2]
 ----
 include::complete/src/test/java/hello/GreetingRouterTest.java[]
 ----
