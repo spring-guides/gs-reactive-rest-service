@@ -1,4 +1,4 @@
-:spring_boot_version: 2.4.2
+:spring_boot_version: 2.4.3
 :SpringApplication: https://docs.spring.io/spring-boot/docs/{spring_boot_version}/api/org/springframework/boot/SpringApplication.html
 :toc:
 :icons: font
@@ -35,7 +35,8 @@ Initializr]. The Initializr offers a fast way to pull in all the dependencies yo
 an application and does a lot of the set up for you. This example needs only the Spring
 Reactive Web dependency.
 
-You can get a Maven build file with the necessary dependencies directly from the https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.4.2.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=reactive-rest-service&name=reactive-rest-service&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.reactive-rest-service&dependencies=webflux[Spring Initializr].
+If you use Maven, visit the https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.4.3.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=reactive-rest-service&name=reactive-rest-service&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.reactive-rest-service&dependencies=webflux[Spring Initializr] to generate a new project with the required dependency (Spring Web Reactive).
+
 The following listing shows the `pom.xml` file that is created when you choose Maven:
 
 ====
@@ -45,7 +46,8 @@ include::initial/pom.xml[]
 ----
 ====
 
-You can get a Gradle build file with the necessary dependencies directly from the https://start.spring.io/#!type=gradle-project&language=java&platformVersion=2.4.2.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=reactive-rest-service&name=reactive-rest-service&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.reactive-rest-service&dependencies=webflux[Spring Initializr].
+If you use Gradle, visit the https://start.spring.io/#!type=gradle-project&language=java&platformVersion=2.4.3.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=reactive-rest-service&name=reactive-rest-service&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.reactive-rest-service&dependencies=webflux[Spring Initializr] to generate a new project with the required dependency (Spring Web Reactive).
+
 The following listing shows the `build.gradle` file that is created when you choose Gradle:
 
 ====
@@ -54,6 +56,19 @@ The following listing shows the `build.gradle` file that is created when you cho
 include::initial/build.gradle[]
 ----
 ====
+
+=== Manual Initialization (optional)
+
+If you want to initialize the project manually rather than use the links shown earlier, follow the steps given below:
+
+. Navigate to https://start.spring.io.
+This service pulls in all the dependencies you need for an application and does most of the setup for you.
+. Choose either Gradle or Maven and the language you want to use. This guide assumes that you chose Java.
+. Click *Dependencies* and select *Spring Reactive Web*.
+. Click *Generate*.
+. Download the resulting ZIP file, which is an archive of a web application that is configured with your choices.
+
+NOTE: If your IDE has the Spring Initializr integration, you can complete this process from your IDE.
 
 [[initial]]
 == Create a WebFlux Handler
