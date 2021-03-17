@@ -30,11 +30,6 @@ include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/
 [[scratch]]
 == Starting with Spring Initializr
 
-For all Spring applications, you should start with the https://start.spring.io[Spring
-Initializr]. The Initializr offers a fast way to pull in all the dependencies you need for
-an application and does a lot of the set up for you. This example needs only the Spring
-Reactive Web dependency.
-
 If you use Maven, visit the https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.4.3.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=reactive-rest-service&name=reactive-rest-service&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.reactive-rest-service&dependencies=webflux[Spring Initializr] to generate a new project with the required dependency (Spring Web Reactive).
 
 The following listing shows the `pom.xml` file that is created when you choose Maven:
