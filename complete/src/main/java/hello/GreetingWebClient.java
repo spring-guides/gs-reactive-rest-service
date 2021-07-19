@@ -29,4 +29,5 @@ public class GreetingWebClient {
 	public String getResult() {
 		return result;
 	}
+
 }
