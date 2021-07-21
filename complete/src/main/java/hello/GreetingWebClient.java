@@ -7,27 +7,23 @@ import reactor.core.publisher.Mono;
 
 public class GreetingWebClient {
 
-	private final String result;
+	private final WebClient client = WebClient.create("http://localhost:8080");
 
-	public GreetingWebClient() {
-
-		WebClient client = WebClient.create("http://localhost:8080");
-		WebClient.RequestHeadersUriSpec<?> requestHeadersUriSpec = client.get();
-		requestHeadersUriSpec.uri("/hello").accept(MediaType.TEXT_PLAIN);
-		Mono<String> response = requestHeadersUriSpec.exchangeToMono(res -> {
-			if (res.statusCode().equals(HttpStatus.OK))
-				return res.bodyToMono(String.class);
-			if (res.statusCode().is4xxClientError())
-				return Mono.just("Error response: ".concat(res.statusCode().getReasonPhrase()));
-			return res.createException().flatMap(Mono::error);
-		});
-
-		result = response.block();
-
-	}
+	private final Mono<String> response = client.get()
+			.uri("/hello")
+			.accept(MediaType.TEXT_PLAIN)
+			.exchangeToMono(res -> {
+				if (res.statusCode().equals(HttpStatus.OK)) {
+					return res.bodyToMono(String.class);
+				} else if (res.statusCode().is4xxClientError()) {
+					return Mono.just(res.statusCode().getReasonPhrase());
+				} else {
+					return res.createException().flatMap(Mono::error);
+				}
+			});
 
 	public String getResult() {
-		return result;
+		return ">> result = " + response.block();
 	}
 
 }
