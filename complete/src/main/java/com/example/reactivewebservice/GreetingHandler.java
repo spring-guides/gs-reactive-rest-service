@@ -1,4 +1,4 @@
-package hello;
+package com.example.reactivewebservice;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
