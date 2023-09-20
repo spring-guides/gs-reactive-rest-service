@@ -53,7 +53,7 @@ We're going to start with a `Greeting` POJO that will be serialized as JSON by o
 `src/main/java/hello/Greeting.java`
 [source,java,tabsize=2]
 ----
-include::complete/src/main/java/hello/Greeting.java[]
+include::complete/src/main/java/com/example/reactivewebservice/Greeting.java[]
 ----
 
 In the Spring Reactive approach, we use a handler to handle the request and create a
@@ -62,7 +62,7 @@ response, as shown in the following example:
 `src/main/java/hello/GreetingHandler.java`
 [source,java,tabsize=2]
 ----
-include::complete/src/main/java/hello/GreetingHandler.java[]
+include::complete/src/main/java/com/example/reactivewebservice/GreetingHandler.java[]
 ----
 
 This simple reactive class always returns a JSON body with a "`Hello, Spring!`" greeting.
@@ -78,7 +78,7 @@ shown in the following example:
 `src/main/java/hello/GreetingRouter.java`
 [source,java,tabsize=2]
 ----
-include::complete/src/main/java/hello/GreetingRouter.java[]
+include::complete/src/main/java/com/example/reactivewebservice/GreetingRouter.java[]
 ----
 
 The router listens for traffic on the `/hello` path and returns the value provided by our
@@ -94,7 +94,7 @@ to consume our RESTful service:
 `src/main/java/hello/GreetingClient.java`
 [source,java,tabsize=2]
 ----
-include::complete/src/main/java/hello/GreetingClient.java[]
+include::complete/src/main/java/com/example/reactivewebservice/GreetingClient.java[]
 ----
 
 
@@ -114,7 +114,7 @@ We're going to use the `main()` method to drive our application and get the Gree
 `src/main/java/hello/Application.java`
 [source,java,tabsize=2]
 ----
-include::complete/src/main/java/hello/Application.java[]
+include::complete/src/main/java/com/example/reactivewebservice/Application.java[]
 ----
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/main/spring-boot-application.adoc[]
@@ -141,7 +141,7 @@ we also created a test class to get you started on testing with the `WebTestClie
 `src/test/java/hello/GreetingRouterTest.java`
 [source,java,tabsize=2]
 ----
-include::complete/src/test/java/hello/GreetingRouterTest.java[]
+include::complete/src/test/java/com/example/reactivewebservice/GreetingRouterTest.java[]
 ----
 
 == Summary
