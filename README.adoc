@@ -34,33 +34,43 @@ To manually initialize the project:
 
 . Navigate to https://start.spring.io.
 This service pulls in all the dependencies you need for an application and does most of the setup for you.
-. Choose either Gradle or Maven and the language you want to use. This guide assumes that you chose Java.
+. Choose either Gradle or Maven and the language you want to use.
 . Click *Dependencies* and select *Spring Reactive Web*.
 . Click *Generate*.
 . Download the resulting ZIP file, which is an archive of a web application that is configured with your choices.
 
 NOTE: If your IDE has the Spring Initializr integration, you can complete this process from your IDE.
 
-NOTE: You can also fork the project from Github and open it in your IDE or other editor.
+NOTE: You can also fork the project from GitHub and open it in your IDE or other editor.
 
 [[initial]]
 == Create a WebFlux Handler
 
-We're going to start with a `Greeting` POJO that will be serialized as JSON by our RESTful service:
+We're going to start with a `Greeting` type that will be serialized as JSON by our RESTful service:
 
-`src/main/java/hello/Greeting.java`
-[source,java,tabsize=2]
+[source,java,indent=0,subs="verbatim,quotes",role="primary"]
+.Java
 ----
 include::complete/src/main/java/com/example/reactivewebservice/Greeting.java[]
+----
+[source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
+.Kotlin
+----
+include::complete-kotlin/src/main/kotlin/com/example/reactivewebservice/Greeting.kt[]
 ----
 
 In the Spring Reactive approach, we use a handler to handle the request and create a
 response, as shown in the following example:
 
-`src/main/java/hello/GreetingHandler.java`
-[source,java,tabsize=2]
+[source,java,indent=0,subs="verbatim,quotes",role="primary"]
+.Java
 ----
 include::complete/src/main/java/com/example/reactivewebservice/GreetingHandler.java[]
+----
+[source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
+.Kotlin
+----
+include::complete-kotlin/src/main/kotlin/com/example/reactivewebservice/GreetingHandler.kt[]
 ----
 
 This simple reactive class always returns a JSON body with a "`Hello, Spring!`" greeting.
@@ -73,10 +83,15 @@ Note the reactive code: a `Mono` object that holds a `ServerResponse` body.
 In this application, we use a router to handle the only route we expose (`/hello`), as
 shown in the following example:
 
-`src/main/java/hello/GreetingRouter.java`
-[source,java,tabsize=2]
+[source,java,indent=0,subs="verbatim,quotes",role="primary"]
+.Java
 ----
 include::complete/src/main/java/com/example/reactivewebservice/GreetingRouter.java[]
+----
+[source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
+.Kotlin
+----
+include::complete-kotlin/src/main/kotlin/com/example/reactivewebservice/GreetingRouter.kt[]
 ----
 
 The router listens for traffic on the `/hello` path and returns the value provided by our
@@ -89,10 +104,15 @@ want to use it in a reactive application. For reactive applications, Spring offe
 `WebClient` class, which is non-blocking. We use a WebClient-based implementation
 to consume our RESTful service:
 
-`src/main/java/hello/GreetingClient.java`
-[source,java,tabsize=2]
+[source,java,indent=0,subs="verbatim,quotes",role="primary"]
+.Java
 ----
 include::complete/src/main/java/com/example/reactivewebservice/GreetingClient.java[]
+----
+[source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
+.Kotlin
+----
+include::complete-kotlin/src/main/kotlin/com/example/reactivewebservice/GreetingClient.kt[]
 ----
 
 
@@ -109,10 +129,15 @@ TIP: You can use `WebClient` to communicate with non-reactive, blocking services
 
 We're going to use the `main()` method to drive our application and get the Greeting message from our endpoint.
 
-`src/main/java/hello/Application.java`
-[source,java,tabsize=2]
+[source,java,indent=0,subs="verbatim,quotes",role="primary"]
+.Java
 ----
 include::complete/src/main/java/com/example/reactivewebservice/ReactiveWebServiceApplication.java[]
+----
+[source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
+.Kotlin
+----
+include::complete-kotlin/src/main/kotlin/com/example/reactivewebservice/ReactiveWebServiceApplication.kt[]
 ----
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/main/spring-boot-application.adoc[]
@@ -136,10 +161,15 @@ Now that the application is running, you can test it. To start with, you can ope
 browser and go to `http://localhost:8080/hello` and see, "`Hello, Spring!`" For this guide,
 we also created a test class to get you started on testing with the `WebTestClient` class.
 
-`src/test/java/hello/GreetingRouterTest.java`
-[source,java,tabsize=2]
+[source,java,indent=0,subs="verbatim,quotes",role="primary"]
+.Java
 ----
 include::complete/src/test/java/com/example/reactivewebservice/GreetingRouterTest.java[]
+----
+[source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
+.Kotlin
+----
+include::complete-kotlin/src/test/kotlin/com/example/reactivewebservice/GreetingRouterTest.kt[]
 ----
 
 == Summary
