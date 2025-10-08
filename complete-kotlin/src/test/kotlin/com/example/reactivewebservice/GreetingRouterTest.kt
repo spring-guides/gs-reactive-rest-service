@@ -9,9 +9,7 @@ import org.springframework.test.web.reactive.server.expectBody
 
 // We create a @SpringBootTest, starting an actual server on a RANDOM_PORT
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class GreetingRouterTest @Autowired constructor(
-    private val webTestClient: WebTestClient
-) {
+class GreetingRouterTest(@Autowired private val webTestClient: WebTestClient) {
 
     // Spring Boot will create a WebTestClient for you,
     // already configured and ready to issue requests against "localhost:RANDOM_PORT"

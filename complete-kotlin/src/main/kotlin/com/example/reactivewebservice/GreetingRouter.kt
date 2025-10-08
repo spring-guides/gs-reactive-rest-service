@@ -12,8 +12,6 @@ class GreetingRouter {
 
     @Bean
     fun route(greetingHandler: GreetingHandler): RouterFunction<ServerResponse> = router {
-        accept(MediaType.APPLICATION_JSON).nest {
-            GET("/hello", greetingHandler::hello)
-        }
+        (accept(MediaType.APPLICATION_JSON) and GET("/hello")).invoke(greetingHandler::hello)
     }
 }

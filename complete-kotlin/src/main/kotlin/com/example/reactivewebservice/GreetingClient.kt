@@ -3,6 +3,7 @@ package com.example.reactivewebservice
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.client.WebClient
+import org.springframework.web.reactive.function.client.bodyToMono
 import reactor.core.publisher.Mono
 
 @Component
@@ -17,6 +18,6 @@ class GreetingClient(builder: WebClient.Builder) {
         .uri("/hello")
         .accept(MediaType.APPLICATION_JSON)
         .retrieve()
-        .bodyToMono(Greeting::class.java)
+        .bodyToMono<Greeting>()
         .map { it.message }
 }
