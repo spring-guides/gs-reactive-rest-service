@@ -8,6 +8,7 @@ import reactor.core.publisher.Mono
 
 @Component
 class GreetingHandler {
+
     fun hello(request: ServerRequest): Mono<ServerResponse> =
         ServerResponse.ok()
             .contentType(MediaType.APPLICATION_JSON)
