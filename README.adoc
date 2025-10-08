@@ -126,7 +126,7 @@ TIP: You can use `WebClient` to communicate with non-reactive, blocking services
 
 == Make the Application Executable
 
-We're going to use the `main()` method to drive our application and get the Greeting message from our endpoint.
+We're going to use the `main()` method to drive our application and get the `Greeting` message from our endpoint.
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
