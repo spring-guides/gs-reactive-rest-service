@@ -1,0 +1,22 @@
+permissions:
+  issues: write
+  contents: write
+
+on:
+  workflow_dispatch:
+
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v5
+    - uses: jzheaux/spring-guides-actions/run-advisor@main
+      with:
+        spring-enterprise-username: ${{ secrets.SPRING_ENTERPRISE_USERNAME }}
+        spring-enterprise-token: ${{ secrets.SPRING_ENTERPRISE_PASSWORD }}
+        directory: initial
+    - uses: jzheaux/spring-guides-actions/run-advisor@main
+      with:
+        spring-enterprise-username: ${{ secrets.SPRING_ENTERPRISE_USERNAME }}
+        spring-enterprise-token: ${{ secrets.SPRING_ENTERPRISE_PASSWORD }}
+        directory: complete
+
