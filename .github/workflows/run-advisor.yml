@@ -1,3 +1,5 @@
+name: Run Advisor
+
 permissions:
   issues: write
   contents: write
@@ -9,15 +11,18 @@ jobs:
   runner:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v5
-    - uses: jzheaux/spring-guides-actions/run-advisor@main
+    - name: Checkout Project
+      uses: actions/checkout@v5
+    - name: Run Advisor on Initial
+      uses: jzheaux/spring-guides-actions/run-advisor@main
       with:
         spring-enterprise-username: ${{ secrets.SPRING_ENTERPRISE_USERNAME }}
-        spring-enterprise-token: ${{ secrets.SPRING_ENTERPRISE_PASSWORD }}
+        spring-enterprise-token: ${{ secrets.SPRING_ENTERPRISE_TOKEN }}
         directory: initial
-    - uses: jzheaux/spring-guides-actions/run-advisor@main
+    - name: Run Advisor on Complete
+      uses: jzheaux/spring-guides-actions/run-advisor@main
       with:
         spring-enterprise-username: ${{ secrets.SPRING_ENTERPRISE_USERNAME }}
-        spring-enterprise-token: ${{ secrets.SPRING_ENTERPRISE_PASSWORD }}
+        spring-enterprise-token: ${{ secrets.SPRING_ENTERPRISE_TOKEN }}
         directory: complete
 
