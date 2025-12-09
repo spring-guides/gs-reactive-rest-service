@@ -6,8 +6,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
+  runner:
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v5
     - uses: jzheaux/spring-guides-actions/run-advisor@main
       with:
