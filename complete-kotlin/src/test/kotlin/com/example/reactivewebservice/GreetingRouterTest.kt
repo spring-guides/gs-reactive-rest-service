@@ -13,18 +13,18 @@ import org.springframework.test.web.reactive.server.expectBody
 @AutoConfigureWebTestClient
 class GreetingRouterTest(@Autowired private val webTestClient: WebTestClient) {
 
-    // Spring Boot will create a WebTestClient for you,
-    // already configured and ready to issue requests against "localhost:RANDOM_PORT"
-    @Test
-    fun testHello() {
-        webTestClient
-            // Create a GET request to test an endpoint
-            .get().uri("/hello")
-            .accept(MediaType.APPLICATION_JSON)
-            .exchange()
-            // and use the dedicated DSL to test assertions against the response
-            .expectStatus().isOk
-            .expectBody<Greeting>()
-            .isEqualTo(Greeting("Hello, Spring!"))
-    }
+  // Spring Boot will create a WebTestClient for you,
+  // already configured and ready to issue requests against "localhost:RANDOM_PORT"
+  @Test
+  fun testHello() {
+    webTestClient
+      // Create a GET request to test an endpoint
+      .get().uri("/hello")
+      .accept(MediaType.APPLICATION_JSON)
+      .exchange()
+      // and use the dedicated DSL to test assertions against the response
+      .expectStatus().isOk
+      .expectBody<Greeting>()
+      .isEqualTo(Greeting("Hello, Spring!"))
+  }
 }

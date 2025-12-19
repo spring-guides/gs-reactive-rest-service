@@ -10,8 +10,8 @@ import org.springframework.web.reactive.function.server.router
 @Configuration(proxyBeanMethods = false)
 class GreetingRouter {
 
-    @Bean
-    fun route(greetingHandler: GreetingHandler): RouterFunction<ServerResponse> = router {
-        (accept(MediaType.APPLICATION_JSON) and GET("/hello")).invoke(greetingHandler::hello)
-    }
+  @Bean
+  fun route(greetingHandler: GreetingHandler): RouterFunction<ServerResponse> = router {
+    (accept(MediaType.APPLICATION_JSON) and GET("/hello")).invoke(greetingHandler::hello)
+  }
 }
